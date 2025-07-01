@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+		<title>Анкета</title>
+	</head>
+	<body>
+		<main class="container-md pt-3">
+			<h1>Анкета</h1>
+			<hr>
+			<form method="post" action="/Form/ProcessForm">
+				<div class="mb-3">
+					<label class="form-label" for="firstname">Имя:</label>
+					<input class="form-control" type="text" name="firstname" placeholder="Tom" required>
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="lastname">Фамилия:</label>
+					<input class="form-control" type="text" name="lastname" placeholder="Simple">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="phone">Номер телефона:</label>
+					<input class="form-control" type="tel" name="phone" placeholder="+70000000000">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="email">Адрес электронной почты:</label>
+					<input class="form-control" type="email" name="email" placeholder="example@mail.ru" required>
+				</div>
+				<div class="mb-3">
+					<button class="btn btn-primary" type="submit">Отправить анкету</button>
+				</div>
+			</form>
+		</main>
+	</body>
+</html>
