@@ -12,14 +12,19 @@ public class SqlServer extends Database {
 		super(ip, DEFAULT_PORT, credentials, databaseName);
 	}
 	
-	public String getConnectionString() {
+	protected String getConnectionString() {
 		StringBuilder builder = new StringBuilder();
 		
 		builder.append("jdbc:sqlserver://");
 		builder.append(ip).append(':').append(port).append(';');
 		builder.append("encrypt=true;");
+		builder.append("trustServerCertificate=true;");
 		builder.append("databaseName=").append(databaseName).append(';');
 		
 		return builder.toString();
+	}
+	
+	protected String getDriver() {
+		return "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	}
 }

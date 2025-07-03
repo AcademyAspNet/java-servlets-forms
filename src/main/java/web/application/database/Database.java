@@ -22,8 +22,15 @@ public abstract class Database {
 	}
 	
 	protected abstract String getConnectionString();
+	protected abstract String getDriver();
 	
 	public void useConnection(Consumer<Connection> consumer) {
+		try {
+			Class.forName(getDriver());
+		} catch (ClassNotFoundException exception) {
+			throw new RuntimeException(exception);
+		}
+		
 		String connectionString = getConnectionString();
 		String user = credentials.getUser();
 		String password = credentials.getPassword();
